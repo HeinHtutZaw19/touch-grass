@@ -14,6 +14,37 @@
   --color-custom-dark-purple: #0d0b42;
   --color-bg-gray: #f6f8fa;
   --color-font-gray: #a4a4a8;
+  --color-card-yellow: #fae180;
+  --color-card-pink: #ffabde;
+  --color-card-lilac: #d7c6ff;
+  --color-card-skyblue: #dce3f6;
+}
+
+@layer components {
+  .feature-container {
+    @apply flex w-[75vw] items-center justify-between;
+  }
+
+  .feature-text {
+    @apply flex flex-col gap-8;
+  }
+
+  .feature-title {
+    @apply text-4xl font-semibold font-body;
+  }
+
+  .feature-description {
+    @apply font-body text-xl w-[450px] leading-10;
+  }
+  .heading2 {
+    @apply text-7xl font-subheading font-bold text-center leading-25 w-[60vw];
+  }
+  .card {
+    @apply w-[670px] h-[460px] rounded-[20px] p-5;
+  }
+  .card-content {
+    @apply flex flex-col justify-center items-center gap-2;
+  }
 }
 
 html {
