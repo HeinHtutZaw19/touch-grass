@@ -22,10 +22,16 @@ def create_app():
     from app.api.users import users_bp
     from app.api.ai_interactions import ai_interactions_bp
     from app.api.datamaps import datamaps_bp
+    from app.api.fun_facts import fun_facts_bp
+    from app.api.hobbies import hobbies_bp
+    from app.api.recommend import recommend_bp
     
 
     app.register_blueprint(users_bp, url_prefix="/api/users")
     app.register_blueprint(ai_interactions_bp, url_prefix="/api/ai_interactions")
     app.register_blueprint(datamaps_bp, url_prefix="/api/datamaps")
+    app.register_blueprint(hobbies_bp, url_prefix="/api/hobbies")
+    app.register_blueprint(fun_facts_bp, url_prefix="/api/fun_facts")
+    app.register_blueprint(recommend_bp, url_prefix="/api/recommend")
 
     return app
