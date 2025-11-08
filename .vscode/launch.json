@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Debug app.main (Flask)",
+            "type": "python",
+            "request": "launch",
+            "module": "app.main",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/backend",
+            "envFile": "${workspaceFolder}/backend/.env",
+            "python": "/opt/anaconda3/envs/touch-grass-env/bin/python",
+            "justMyCode": true
+        }
+    ]
+}

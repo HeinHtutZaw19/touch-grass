@@ -29,7 +29,7 @@ create table ai_interactions (
   id uuid primary key default gen_random_uuid(),
   user_id uuid references users(id) on delete cascade,
   prompt text not null,        
-  fun_fact text,
+  fun_fact_id uuid references fun_facts(id) on delete set null,
   category text not null check (category in ('analytical','creative','social','physical')),
   user_feedback int check (user_feedback between 1 and 5),
   response text,
