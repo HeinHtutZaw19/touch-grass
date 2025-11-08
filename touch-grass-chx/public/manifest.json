@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Touch Grass Chrome Extension",
+  "version": "1.0.0",
+  "description": "AI powered pop ups to stop the addiction to the screen and help people find hobbies",
+  "icons": {
+    "16": "grass_purp.png",
+    "48": "grass_purp.png",
+    "128": "grass_purp.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "grass_purp.png",
+      "48": "grass_purp.png",
+      "128": "grass_purp.png"
+    },
+    "default_title": "Touch Grass",
+    "default_popup": "../index.html"
+  },
+  "permissions": ["storage"],
+  "host_permissions": ["*://*/*"],
+
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["content/modal.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
