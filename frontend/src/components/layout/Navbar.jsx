@@ -3,7 +3,7 @@ import { Logo } from "../../assets/icons/icons";
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 left-0 w-full h-20 bg-custom-pink z-50 flex items-center justify-between px-10 ">
+    <nav className="fixed top-0 left-0 w-full h-20 bg-custom-pink flex items-center justify-between px-10 ">
       <div className="flex items-center gap-2">
         <Logo className="w-7 h-7" />
         <p className="text-[20px] font-bold">
