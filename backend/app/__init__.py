@@ -20,11 +20,12 @@ def create_app():
 
     # Import and register API blueprints
     from app.api.users import users_bp
-    from app.api.hobbies import hobbies_bp
-    from app.api.exercises import exercises_bp
+    from app.api.ai_interactions import ai_interactions_bp
+    from app.api.datamaps import datamaps_bp
+    
 
     app.register_blueprint(users_bp, url_prefix="/api/users")
-    app.register_blueprint(hobbies_bp, url_prefix="/api/hobbies")
-    app.register_blueprint(exercises_bp, url_prefix="/api/exercises")
+    app.register_blueprint(ai_interactions_bp, url_prefix="/api/ai_interactions")
+    app.register_blueprint(datamaps_bp, url_prefix="/api/datamaps")
 
     return app

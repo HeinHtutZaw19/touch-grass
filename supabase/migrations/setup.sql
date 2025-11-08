@@ -1,5 +1,13 @@
 create extension if not exists "pgcrypto";
 
+drop table if exists exercise_attempts cascade;
+drop table if exists exercises cascade;
+drop table if exists level_contents cascade;
+drop table if exists user_hobbies cascade;
+drop table if exists hobbies cascade;
+drop table if exists users cascade;
+
+
 -- users
 create table users (
   id uuid primary key default gen_random_uuid(),
