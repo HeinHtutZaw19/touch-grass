@@ -17,5 +17,18 @@
     "default_title": "Touch Grass",
     "default_popup": "../index.html"
   },
-  "permissions": []
+  "permissions": ["storage"],
+  "host_permissions": ["*://*/*"],
+
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["content/modal.js"],
+      "run_at": "document_start"
+    }
+  ]
 }
