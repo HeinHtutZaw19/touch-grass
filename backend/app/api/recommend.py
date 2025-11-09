@@ -188,8 +188,7 @@ def recommend(user_id):
     chosen_fact_text = None
     try:
         hobby_names = app.supabase_client.table("hobbies").select("name").eq("category", dominant).execute()
-
-        gen = asyncio.run(generate_hobby_and_fact(dominant, hobby_names, {"user_id": user_id, "prefs": prefs}))
+        gen = asyncio.run(generate_hobby_and_fact(dominant, [hobby["name"] for hobby in hobby_names.data], {"user_id": user_id, "prefs": prefs}))
         gen = json.loads(gen.strip())
         create_h = app.supabase_client.table("hobbies").insert({
             "name": gen["name"],
@@ -213,9 +212,6 @@ def recommend(user_id):
                     chosen_fact_text = ins.data[0]["text"]
                 else:
                     chosen_fact_text = gen["fun_fact"]
-            except Exception as e:
-                print("insert fun_fact failed: %s", e)
-                chosen_fact_text = gen["fun_fact"]
                 log_payload = {
                     "user_id": user_id,
                     "prompt": f"Recommendation for category {dominant}",
@@ -231,6 +227,10 @@ def recommend(user_id):
                     "fun_fact_id": chosen_fact_id,
                     "fun_fact_text": chosen_fact_text
                 }), 200
+            except Exception as e:
+                print("insert fun_fact failed: %s", e)
+                chosen_fact_text = gen["fun_fact"]
+                
     except Exception as e:
         print("create hobby failed: %s", e)
 
