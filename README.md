@@ -2,8 +2,13 @@
 
 ## Description
 
-**Touch Grass** will be a subscription base chrome extension service which turns self discovery into a game. Instead of long lessons or recommendations, users will receive random “side quests” like go dance, or go on a walk and be asked to take a photo or video to submit. To build accountability, users can invite a friend to verify when a quest is completed. Touch Grass uses a Vite + React frontend and a Chrome Extension UI, with a Flask backend and Supabase for auth, database, and storage. OpenAI generates personalized quests and Firecrawl provides contextual data
+**Touch Grass** will be a subscription-based Chrome extension service that turns self-discovery into a game. Instead of long lessons or recommendations, users will receive random “side quests,” such as going dancing or going for a walk, and be asked to take a photo or video to submit. To build accountability, users can invite a friend to verify when a quest is completed. Touch Grass utilizes a Vite + React frontend and a Chrome Extension UI, paired with a Flask backend and Supabase for authentication, database, and storage. OpenAI generates personalized quests and Firecrawl provides contextual data
 
+## Team Members
+* Hein Htut Zaw: heinzaw.official@gmail.com
+* Minji Kim: clairekim0503@gmail.com
+* Sunggin Kim: sungginkim528@gmail.com
+* Nelson Pang: nelsonpang1234@gmail.com
 
 ## How to Run
 ### Chrome Extension
@@ -41,3 +46,6 @@ pip install -r requirements.txt
 python -m dotenv -f .env run python -m app.main
 ```
 * This would run in `http://localhost:5001`
+
+
+
